@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./App.css";
-import Home from "./pages/Home/Home";
+import Home from "./layouts/Home";
 import { getJobs } from "./utils/fetchData";
 
 function App() {

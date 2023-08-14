@@ -2,22 +2,23 @@ import "./SearchResults.css";
 import SearchResult from "./SearchResult/SearchResult";
 import { useRecoilValue } from "recoil";
 import { jobsState } from "../../../atoms/jobs";
+import { getLocation } from "../../../utils/location";
 
 const SearchResults = () => {
   const jobs = useRecoilValue(jobsState);
-  const getLocation = (locationRestrictions: Array<string>): string => {
-    if (locationRestrictions.length === 0) {
-      return `Remote`;
-    }
-    return locationRestrictions[0];
+
+  const getJobId = (id: string) => {
+    // slice the string
+    return id.slice(id.lastIndexOf(`-`) + 1);
   };
   return (
     <main>
-      {jobs.map((job, index) => (
+      {jobs.map((job) => (
         <SearchResult
           {...job}
           location={getLocation(job.locationRestrictions)}
-          key={index}
+          key={job.guid}
+          jobId={getJobId(job.guid)}
         />
       ))}
     </main>

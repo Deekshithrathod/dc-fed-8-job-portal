@@ -1,13 +1,17 @@
 import "./LeftPane.css";
-import SectionHeading from "../../SectionHeading/SectionHeading";
+import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
+import { Link } from "react-router-dom";
 
 const LeftPane = () => {
   return (
     <div className="left-pane">
-      <div className="back-btn">
-        <TrendingFlatIcon style={{ transform: `scaleX(-1)` }} /> Back to search
-      </div>
+      <Link to={`/`}>
+        <div className="back-btn">
+          <TrendingFlatIcon style={{ transform: `scaleX(-1)` }} /> Back to
+          search
+        </div>
+      </Link>
       <div className="instructions">
         <SectionHeading headingText="How To Appy" />
         <p>
