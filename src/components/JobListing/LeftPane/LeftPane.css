@@ -1,0 +1,50 @@
+.left-pane {
+  width: 30%;
+}
+
+.back-btn {
+  color: #1e86ff;
+  font-family: "Poppins";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.instructions {
+  margin-top: 2.25rem;
+}
+
+h4 {
+  color: #b9bdcf;
+  font-family: "Poppins";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.instructions > p {
+  color: #334680;
+  font-family: "Poppins";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  margin-top: 1rem;
+}
+.instructions > p > a {
+  color: #1e86ff;
+}
+
+@media (max-width: 700px) {
+  .left-pane {
+    width: 100%;
+  }
+}

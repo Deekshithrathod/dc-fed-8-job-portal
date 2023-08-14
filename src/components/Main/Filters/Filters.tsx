@@ -1,4 +1,5 @@
 import "./Filters.css";
+import SectionHeading from "../../SectionHeading/SectionHeading";
 import PublicIcon from "@mui/icons-material/Public";
 
 const Filters = () => {
@@ -11,7 +12,7 @@ const Filters = () => {
       </div>
 
       <div className="location-filter">
-        <h2>Location</h2>
+        <SectionHeading headingText="Location" />
         <div className="loc-search-container">
           <PublicIcon style={{ padding: `0 0.75rem`, color: `#B9BDCF` }} />
           <input

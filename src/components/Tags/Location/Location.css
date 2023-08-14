@@ -1,0 +1,12 @@
+.tag-location {
+  color: #b9bdcf;
+  font-family: "Roboto";
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  display: flex;
+  align-items: center;
+  gap: 0 0.25rem;
+}

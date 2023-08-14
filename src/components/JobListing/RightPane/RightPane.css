@@ -1,0 +1,72 @@
+.right-pane {
+  width: 70%;
+}
+
+.main-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.875rem 1.125rem;
+}
+
+.main-heading > h2 {
+  color: #334680;
+  font-family: "Roboto";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.main-heading > .time-container {
+  width: 100%;
+}
+
+.comp-card {
+  display: flex;
+  gap: 0 0.75rem;
+
+  margin-top: 2rem;
+}
+
+.comp-card > .comp-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.comp-info {
+  color: #334680;
+  font-family: "Roboto";
+  font-style: normal;
+  line-height: normal;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.comp-name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.job-desc {
+  color: #334680;
+  font-family: "Roboto";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+
+  margin-top: 2rem;
+}
+@media (max-width: 700px) {
+  .right-pane {
+    width: 100%;
+  }
+  .main-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+  }
+}
