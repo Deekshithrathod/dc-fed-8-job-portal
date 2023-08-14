@@ -1,0 +1,11 @@
+.middle {
+  display: flex;
+  gap: 0 2rem;
+}
+
+@media (max-width: 700px) {
+  .middle {
+    flex-direction: column;
+    gap: 1.5rem 0;
+  }
+}

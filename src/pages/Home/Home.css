@@ -1,0 +1,15 @@
+.home {
+  padding: 2rem 7.5rem;
+  color: #b9bdcf;
+}
+
+input:focus {
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  .home {
+    padding: 0.75rem;
+    color: #b9bdcf;
+  }
+}
