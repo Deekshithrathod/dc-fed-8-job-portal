@@ -7,7 +7,6 @@ import { IJob, jobsState } from "./atoms/jobs";
 import Home from "./layouts/Home";
 
 function App() {
-  // Fetch first 200 jobs & store them in state using recoil
   const setJobs = useSetRecoilState(jobsState);
 
   useEffect(() => {

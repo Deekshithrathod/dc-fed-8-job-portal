@@ -23,7 +23,12 @@ const Pagination = () => {
         count={Math.ceil(length / limit)}
         page={currPage}
         onChange={handleChange}
-        sx={{ display: "flex", justifyContent: "flex-end", marginTop: `4rem` }}
+        sx={{
+          display: "flex",
+          justifyContent: "flex-end",
+          maxWidth: `75rem`,
+          margin: `4rem auto`,
+        }}
       />
     </>
   );
