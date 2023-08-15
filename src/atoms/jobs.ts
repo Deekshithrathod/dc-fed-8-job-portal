@@ -1,9 +1,22 @@
 import { atom, selector } from "recoil";
 import defaultJobs from "../utils/defaultJobs.json";
+import { keywordState } from "./keyword";
+import { locationFilterState } from "./location";
 
-export const jobsState = atom({
+export interface IJob {
+  companyName: string;
+  companyLogo: string;
+  title: string;
+  description: string;
+  excerpt: string;
+  pubDate: number;
+  locationRestrictions: string[];
+  guid: string;
+}
+
+export const jobsState = atom<IJob[]>({
   key: "jobsState",
-  default: defaultJobs,
+  default: defaultJobs as IJob[],
 });
 
 export const currJobIdState = atom({
@@ -22,5 +35,23 @@ export const getJobFromIdState = selector({
     return currJobs.find(
       (job) => job.guid.slice(job.guid.lastIndexOf(`-`) + 1) === currJobId
     );
+  },
+});
+
+export const filteredJobs = selector({
+  key: "filteredJobsState",
+  get: ({ get }) => {
+    const allJobs = get(jobsState);
+    const keyword = get(keywordState);
+    const location = get(locationFilterState);
+
+    return allJobs.filter((job) => {
+      return (
+        (job.title.includes(keyword) ||
+          job.companyName.includes(keyword) ||
+          job.description.includes(keyword)) &&
+        job.locationRestrictions.includes(location)
+      );
+    });
   },
 });

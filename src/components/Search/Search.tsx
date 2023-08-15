@@ -1,7 +1,11 @@
 import "./Search.css";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
+import { useRecoilState } from "recoil";
+import { keywordState } from "../../atoms/keyword";
 
 const Search = () => {
+  const [keyword, setKeyWord] = useRecoilState(keywordState);
+
   return (
     <div className="search-container">
       <div className="bg-img">
@@ -16,6 +20,8 @@ const Search = () => {
           name="search"
           id="search"
           placeholder="Title, companies, expertise or benefits"
+          value={keyword}
+          onChange={(e) => setKeyWord(e.target.value)}
         />
         <button>Search</button>
       </div>

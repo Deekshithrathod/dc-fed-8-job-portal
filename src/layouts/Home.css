@@ -1,6 +1,7 @@
 .home {
   background-color: #f6f7fb;
   padding: 2rem 7.5rem;
+  min-height: 100vh;
 }
 
 input:focus {

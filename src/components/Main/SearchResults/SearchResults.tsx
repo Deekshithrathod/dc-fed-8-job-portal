@@ -1,16 +1,16 @@
 import "./SearchResults.css";
 import SearchResult from "./SearchResult/SearchResult";
 import { useRecoilValue } from "recoil";
-import { jobsState } from "../../../atoms/jobs";
+import { filteredJobs } from "../../../atoms/jobs";
 import { getLocation } from "../../../utils/location";
 
 const SearchResults = () => {
-  const jobs = useRecoilValue(jobsState);
+  let jobs = useRecoilValue(filteredJobs);
 
   const getJobId = (id: string) => {
-    // slice the string
     return id.slice(id.lastIndexOf(`-`) + 1);
   };
+
   return (
     <main>
       {jobs.map((job) => (
