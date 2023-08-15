@@ -31,7 +31,9 @@ const SearchResult = ({
         </div>
         <div className="job-info">
           <div className="comp-name">{companyName}</div>
-          <div className="job-title">{title}</div>
+          <div className="job-title">
+            {title.length > 48 ? `${title.slice(0, 48)}...` : title}
+          </div>
           <div className="job-meta">
             <RoleType roleType="Full Time" />
             <div className="details">

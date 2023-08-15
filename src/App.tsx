@@ -1,5 +1,4 @@
 import "./App.css";
-import defaultJobs from "./utils/defaultJobs.json";
 import { getJobs } from "./utils/fetchData";
 import { useEffect } from "react";
 import { useSetRecoilState } from "recoil";
@@ -12,7 +11,7 @@ function App() {
   const setJobs = useSetRecoilState(jobsState);
 
   useEffect(() => {
-    let data = defaultJobs as IJob[];
+    let data = [] as IJob[];
     (async () => {
       data = await getJobs(50, 0);
       console.log(data);

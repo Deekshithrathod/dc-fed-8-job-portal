@@ -1,5 +1,4 @@
 import { atom, selector } from "recoil";
-import defaultJobs from "../utils/defaultJobs.json";
 import { keywordState } from "./keyword";
 import { locationFilterState } from "./location";
 
@@ -16,7 +15,7 @@ export interface IJob {
 
 export const jobsState = atom<IJob[]>({
   key: "jobsState",
-  default: defaultJobs as IJob[],
+  default: [] as IJob[],
 });
 
 export const currJobIdState = atom({
@@ -50,7 +49,7 @@ export const filteredJobs = selector({
         (job.title.includes(keyword) ||
           job.companyName.includes(keyword) ||
           job.description.includes(keyword)) &&
-        job.locationRestrictions.includes(location)
+        (location === "" ? true : job.locationRestrictions.includes(location))
       );
     });
   },

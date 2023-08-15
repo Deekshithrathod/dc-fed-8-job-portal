@@ -7,12 +7,6 @@ import { useRecoilState } from "recoil";
 const Filters = () => {
   const [location, setLocation] = useRecoilState(locationFilterState);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.checked) {
-      setLocation(`United States`);
-    }
-  };
-
   return (
     <aside>
       <div className="full-time-toggle">
@@ -43,7 +37,6 @@ const Filters = () => {
               type="radio"
               name="location"
               id="United States"
-              defaultChecked
               onChange={(e) => e.target.checked && setLocation(`United States`)}
             />
             United States
