@@ -29,8 +29,6 @@ export const getJobFromIdState = selector({
     const currJobs = get(jobsState);
     const currJobId = get(currJobIdState);
 
-    console.log(currJobId);
-
     return currJobs.find(
       (job) => job.guid.slice(job.guid.lastIndexOf(`-`) + 1) === currJobId
     );
@@ -46,9 +44,7 @@ export const filteredJobs = selector({
 
     return allJobs.filter((job) => {
       return (
-        (job.title.includes(keyword) ||
-          job.companyName.includes(keyword) ||
-          job.description.includes(keyword)) &&
+        JSON.stringify(job).toLowerCase().includes(keyword.toLowerCase()) &&
         (location === "" ? true : job.locationRestrictions.includes(location))
       );
     });

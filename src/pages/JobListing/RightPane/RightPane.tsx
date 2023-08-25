@@ -32,11 +32,7 @@ const RightPane = () => {
           <Location location={getLocation(currJob.locationRestrictions)} />
         </div>
       </div>
-      <div className="job-desc">
-        {/* <ReactMarkdown> */}
-        {parse(currJob.description)}
-        {/* </ReactMarkdown> */}
-      </div>
+      <div className="job-desc">{parse(currJob.description)}</div>
     </div>
   );
 };

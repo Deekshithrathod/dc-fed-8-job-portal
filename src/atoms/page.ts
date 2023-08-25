@@ -4,7 +4,7 @@ import { filteredJobs } from "./jobs";
 export const pageState = atom({
   key: "pageState",
   default: {
-    length: 60,
+    length: 100,
     limit: 10,
     currPage: 1,
   },
